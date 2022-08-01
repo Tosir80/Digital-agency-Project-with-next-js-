@@ -28,3 +28,21 @@ a {
     background: rgb(10, 227, 93);
   }
 }
+
+
+.active{
+  @apply duration-500  transition-all ;
+  color:green ;
+  font-weight: 600;
+}
+
+.active::after{
+  content: '';
+  width: 60px;
+ height: 2px; 
+ background: red;
+ display: block;
+ text-align: center;
+ margin: 0 auto;
+
+}

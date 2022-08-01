@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react';
 import { AiOutlineBars ,AiOutlineClose} from 'react-icons/ai';
+import { useRouter } from 'next/router';
 const Navbar = () => {
 
     let Links=[
@@ -14,6 +15,11 @@ const Navbar = () => {
 
  const [open, setOpen] = useState(false)
 
+// active class add 
+const router = useRouter();
+
+
+
   return (
     <div className="shadow-md w-full fixed top-0 left-0">
      <div className="md:flex bg-white py-4 md:px-10 px-7 justify-between items-center ">
@@ -23,7 +29,7 @@ const Navbar = () => {
 
         {/* bar----- */}
         <div onClick={()=>setOpen(!open)} className='text-2xl text-gray-700 absolute right-8 top-5 md:hidden cursor-pointer '>
-            {open? <AiOutlineClose/> : <AiOutlineBars /> }
+            {open? <AiOutlineClose className='text-indigo-500 '/> : <AiOutlineBars className='text-indigo-500 ' /> }
         </div>
 
         {/* ul li item------ */}
@@ -35,7 +41,7 @@ const Navbar = () => {
             Links.map((link)=>(
             <li onClick={()=>setOpen(false)} key={link.name} className="md:ml-8 text-xl text-black md:my-0 my-7">
                 <Link href={link.link}>
-                    <a className='text-gray-800 hover:text-fuchsia-500 duration-500  '>{link.name}</a>
+                    <a className={`text-gray-800 hover:text-fuchsia-500 duration-500 ${router.pathname==link.link? 'active': ''}`} >{link.name}</a>
                 </Link>
             </li>
             ))
