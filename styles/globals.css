@@ -19,30 +19,28 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: rgb(10, 227, 93);
-  }
-}
+
+
 
 
 .active{
-  @apply duration-500  transition-all ;
-  color:green ;
+  @apply duration-500  transition-all ease-in ;
+  color:rgb(251, 105, 14) ;
   font-weight: 600;
 }
 
-.active::after{
-  content: '';
-  width: 60px;
- height: 2px; 
- background: red;
- display: block;
- text-align: center;
- margin: 0 auto;
 
+h1{
+  @apply text-5xl
 }
+
+h2{
+  @apply text-4xl 
+}
+h3{
+  @apply text-2xl
+}
+p{
+  @apply py-3
+}
+
