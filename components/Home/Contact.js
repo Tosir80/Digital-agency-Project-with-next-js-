@@ -6,7 +6,7 @@ const Contact = () => {
       <div className="text-center py-5  md:flex items-center justify-center space-x-5 ">
         <div>
         <h4 className="text-2xl">Have any question about us?</h4>
-        <p>Don't hesitate to contact us</p>
+        <p>Dont hesitate to contact us</p>
         </div>
         <button
           type="button"
